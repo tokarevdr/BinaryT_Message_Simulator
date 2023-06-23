@@ -11,11 +11,13 @@ CONFIG += c++17
 SOURCES += \
     abstractmessage.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    messages/coordinatespeedtimemessage.cpp
 
 HEADERS += \
     abstractmessage.h \
-    mainwindow.h
+    mainwindow.h \
+    messages/coordinatespeedtimemessage.h
 
 FORMS += \
     mainwindow.ui
