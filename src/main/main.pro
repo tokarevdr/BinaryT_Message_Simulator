@@ -12,11 +12,13 @@ SOURCES += \
     abstractmessage.cpp \
     main.cpp \
     mainwindow.cpp \
+    messagemanager.cpp \
     messages/coordinatespeedtimemessage.cpp
 
 HEADERS += \
     abstractmessage.h \
     mainwindow.h \
+    messagemanager.h \
     messages/coordinatespeedtimemessage.h
 
 FORMS += \
