@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     abstractmessage.cpp \
+    fake_sink.cpp \
     main.cpp \
     mainwindow.cpp \
     messagemanager.cpp \
@@ -17,6 +18,8 @@ SOURCES += \
 
 HEADERS += \
     abstractmessage.h \
+    fake_sink.h \
+    isink.h \
     mainwindow.h \
     messagemanager.h \
     messages/coordinatespeedtimemessage.h
