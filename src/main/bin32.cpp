@@ -32,7 +32,7 @@ bool bin32::GetBit(quint8 bit) const
 {
     if (bit>=0 && bit <=31)
     return value_ & (1 << bit);
-    else return "Inserted bit is out of range";
+    else qDebug() << "Inserted bit is out of range";
 }
 
 quint32 bin32::GetBits(quint8 bit_begin, quint8 bit_end) const
@@ -46,5 +46,5 @@ quint32 bin32::GetBits(quint8 bit_begin, quint8 bit_end) const
     }
     return (value_ >> bit_begin) & mask;
 }
-    else return "Inserted bit is out of range";
+    else qDebug() << "Inserted bit is out of range";
 }
