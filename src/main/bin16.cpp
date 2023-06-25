@@ -11,7 +11,7 @@ void bin16::SetBit(quint8 bit, bool value)
 {
     if (bit < 0 && bit > 15)
     {
-        qDebug()<< "In class BIN16, in method SetBit(), error: Inserted bit is out of range";
+        qDebug()<< "bin16:SetBit(): Inserted bit is out of range";
         return;
     }
     else
@@ -34,7 +34,7 @@ bool bin16::GetBit(quint8 bit) const
 {
     if (bit<0 && bit > 15)
     {
-     qDebug() << "In class BIN16, in method GetBit(), error: Inserted bit is out of range";
+     qDebug() << "bin16:GetBit(): Inserted bit is out of range";
      return false;
     }
     else return value_ & (1 << bit);;
@@ -49,7 +49,7 @@ quint16 bin16::GetBits(quint8 bit_begin, quint8 bit_end) const
     }
     else if (bit_end < bit_begin)
     {
-        qDebug() << "In class BIN16, in method GetBits(), error: The bit order is entered incorrectly";
+        qDebug() << "bin16:GetBits(): start bit > end bit";
         return 0;
     }
     else
