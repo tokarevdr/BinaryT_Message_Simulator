@@ -1,5 +1,5 @@
-
-/* BIN16 */ 
+#include "bin16.h"
+ 
 bin16::bin16(quint16 value)
 {
     value_ = value;
