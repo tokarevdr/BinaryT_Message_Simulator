@@ -19,7 +19,7 @@ void bin32::SetBit(quint8 bit, bool value)
     else qDebug()<< "Inserted bit is out of range";
 }
 
-void bin32::SetValue(quint8 buffer)
+void bin32::SetValue(quint32 buffer)
 {
     if(buffer >= 0 && buffer <= 4294967295)
     //устанавливаем значение
