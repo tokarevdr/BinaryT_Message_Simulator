@@ -44,7 +44,7 @@ quint16 bin16::GetBits(quint8 bit_begin, quint8 bit_end) const
 {
     if (bit_begin > 15 && bit_begin < 0 && bit_end < 0 && bit_end > 15)
     {
-        qDebug() << "In class BIN16, in method GetBits(), error: Inserted bit is out of range";
+        qDebug() << "bin16:GetBits(): Inserted bit is out of range";
         return 0;
     }
     else if (bit_end < bit_begin)
