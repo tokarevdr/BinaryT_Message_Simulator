@@ -11,21 +11,21 @@ CONFIG += c++17
 SOURCES += \
     abstractmessage.cpp \
     fake_sink.cpp \
+    gui/mainwindow.cpp \
     main.cpp \
-    mainwindow.cpp \
     messagemanager.cpp \
     messages/coordinatespeedtimemessage.cpp
 
 HEADERS += \
     abstractmessage.h \
     fake_sink.h \
+    gui/mainwindow.h \
     isink.h \
-    mainwindow.h \
     messagemanager.h \
     messages/coordinatespeedtimemessage.h
 
 FORMS += \
-    mainwindow.ui
+    gui/mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
