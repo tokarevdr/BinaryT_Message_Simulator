@@ -14,15 +14,18 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     messagemanager.cpp \
-    messages/coordinatespeedtimemessage.cpp
+    messages/coordinatespeedtimemessage.cpp \
+    messages_fields/coordinates_speed_time_message_fields.cpp
 
 HEADERS += \
     abstractmessage.h \
     fake_sink.h \
+    i_message_fields.h \
     isink.h \
     mainwindow.h \
     messagemanager.h \
-    messages/coordinatespeedtimemessage.h
+    messages/coordinatespeedtimemessage.h \
+    messages_fields/coordinates_speed_time_message_fields.h
 
 FORMS += \
     mainwindow.ui
