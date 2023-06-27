@@ -25,7 +25,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="comboBox"/>
+       <widget class="QComboBox" name="comboBox_messageType"/>
       </item>
       <item>
        <spacer name="horizontalSpacer">
@@ -43,7 +43,7 @@
      </layout>
     </item>
     <item>
-     <widget class="QListWidget" name="listWidget"/>
+     <widget class="MessageFieldTableWidget" name="tableWidget_messageFields" native="true"/>
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -61,7 +61,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="pushButton_sendMessage">
         <property name="text">
          <string>Отправить</string>
         </property>
@@ -95,6 +95,14 @@
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MessageFieldTableWidget</class>
+   <extends>QWidget</extends>
+   <header>message_field_table_widget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
