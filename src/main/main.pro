@@ -11,15 +11,23 @@ CONFIG += c++17
 SOURCES += \
     abstractmessage.cpp \
     fake_sink.cpp \
-    gui/mainwindow.cpp \
+    gui/double_message_field_table_widget_delegate.cpp \
+    gui/float_message_field_table_widget_delegate.cpp \
+    gui/uint16_message_field_table_widget_delegate.cpp \
+    message_field_table_widget.cpp \
     main.cpp \
+    gui/mainwindow.cpp \
     messagemanager.cpp \
     messages/coordinatespeedtimemessage.cpp
 
 HEADERS += \
     abstractmessage.h \
     fake_sink.h \
+    gui/double_message_field_table_widget_delegate.h \
+    gui/float_message_field_table_widget_delegate.h \
     gui/mainwindow.h \
+    gui/uint16_message_field_table_widget_delegate.h \
+    message_field_table_widget.h \
     isink.h \
     messagemanager.h \
     messages/coordinatespeedtimemessage.h
