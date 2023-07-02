@@ -11,29 +11,29 @@ CONFIG += c++17
 SOURCES += \
     abstractmessage.cpp \
     fake_sink.cpp \
-    gui/double_message_field_table_widget_delegate.cpp \
-    gui/float_message_field_table_widget_delegate.cpp \
-    gui/uint16_message_field_table_widget_delegate.cpp \
     message_field_table_widget.cpp \
     main.cpp \
-    gui/mainwindow.cpp \
     messagemanager.cpp \
-    messages/coordinatespeedtimemessage.cpp
+    messages/coordinatespeedtimemessage.cpp \
+    view/double_message_field_table_widget_delegate.cpp \
+    view/float_message_field_table_widget_delegate.cpp \
+    view/mainwindow.cpp \
+    view/uint16_message_field_table_widget_delegate.cpp
 
 HEADERS += \
     abstractmessage.h \
     fake_sink.h \
-    gui/double_message_field_table_widget_delegate.h \
-    gui/float_message_field_table_widget_delegate.h \
-    gui/mainwindow.h \
-    gui/uint16_message_field_table_widget_delegate.h \
     message_field_table_widget.h \
     isink.h \
     messagemanager.h \
-    messages/coordinatespeedtimemessage.h
+    messages/coordinatespeedtimemessage.h \
+    view/double_message_field_table_widget_delegate.h \
+    view/float_message_field_table_widget_delegate.h \
+    view/mainwindow.h \
+    view/uint16_message_field_table_widget_delegate.h
 
 FORMS += \
-    gui/mainwindow.ui
+    view/mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

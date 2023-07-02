@@ -3,21 +3,21 @@
 #include <QTableWidgetItem>
 #include <QHeaderView>
 
-#include "gui/uint16_message_field_table_widget_delegate.h"
-#include "gui/double_message_field_table_widget_delegate.h"
-#include "gui/float_message_field_table_widget_delegate.h"
+#include "view/uint16_message_field_table_widget_delegate.h"
+#include "view/double_message_field_table_widget_delegate.h"
+#include "view/float_message_field_table_widget_delegate.h"
 
 MessageFieldTableWidget::MessageFieldTableWidget(QWidget *parent) :
     QTableWidget(parent)
 {
     this->verticalHeader()->hide();
     this->horizontalHeader()->hide();
+    this->setColumnCount(2);
 }
 
 void MessageFieldTableWidget::setFields(QMap<QString, int> messageFields)
 {
     this->clear();
-    this->setColumnCount(2);
     this->setRowCount(messageFields.count());
 
     int row = 0;
