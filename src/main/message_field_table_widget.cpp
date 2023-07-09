@@ -3,56 +3,31 @@
 #include <QTableWidgetItem>
 #include <QHeaderView>
 
-#include "view/uint16_message_field_table_widget_delegate.h"
-#include "view/double_message_field_table_widget_delegate.h"
-#include "view/float_message_field_table_widget_delegate.h"
-
 MessageFieldTableWidget::MessageFieldTableWidget(QWidget *parent) :
     QTableWidget(parent)
 {
     this->verticalHeader()->hide();
     this->horizontalHeader()->hide();
     this->setColumnCount(2);
+    this->setSelectionMode(QAbstractItemView::NoSelection);
 }
 
-void MessageFieldTableWidget::setFields(QMap<QString, int> messageFields)
+void MessageFieldTableWidget::setField(int row, const QString &name, QStyledItemDelegate *delegate)
+{
+    QTableWidgetItem *itemName = new QTableWidgetItem();
+    QTableWidgetItem *itemValue = new QTableWidgetItem();
+
+    itemName->setText(name);
+    itemName->setFlags(itemName->flags() ^ Qt::ItemIsEditable);
+
+    this->setItem(row, 0, itemName);
+    this->setItem(row, 1, itemValue);
+
+    this->setItemDelegateForRow(row, delegate);
+}
+
+void MessageFieldTableWidget::clearAndSetRowCount(int rowCount)
 {
     this->clear();
-    this->setRowCount(messageFields.count());
-
-    int row = 0;
-
-    QMap<QString, int>::const_iterator i = messageFields.constBegin();
-
-    // Цикл разбора мапы и заполнения таблицы
-    while (i != messageFields.constEnd()) {
-        QTableWidgetItem *itemName = new QTableWidgetItem();
-        QTableWidgetItem *itemValue = new QTableWidgetItem();
-
-        itemName->setText(i.key());
-
-        this->setItem(row, 0, itemName);
-        this->setItem(row, 1, itemValue);
-
-        if (i.value() == 0) // quint16
-        {
-            UInt16MessageFieldTableWidgetDelegate *uintDelegate = new UInt16MessageFieldTableWidgetDelegate();
-            this->setItemDelegateForRow(row, uintDelegate);
-        }
-
-        if (i.value() == 1) // double
-        {
-            DoubleMessageFieldTableWidgetDelegate *doubleDelegate = new DoubleMessageFieldTableWidgetDelegate();
-            this->setItemDelegateForRow(row, doubleDelegate);
-        }
-
-        if (i.value() == 2) // float
-        {
-            FloatMessageFieldTableWidgetDelegate *floatDelegate = new FloatMessageFieldTableWidgetDelegate();
-            this->setItemDelegateForRow(row, floatDelegate);
-        }
-
-        ++i;
-        ++row;
-    }
+    this->setRowCount(rowCount);
 }

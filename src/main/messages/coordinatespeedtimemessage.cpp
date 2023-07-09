@@ -1,6 +1,7 @@
 #include "coordinatespeedtimemessage.h"
 
-CoordinateSpeedTimeMessage::CoordinateSpeedTimeMessage()
+message::CoordinateSpeedTimeMessage::CoordinateSpeedTimeMessage() :
+    AbstractMessage(1, 1, 1) // TODO
 {
 
 }

@@ -3,7 +3,8 @@
 
 #include <abstractmessage.h>
 
-
+#include "utilities/bin16.h"
+#include "utilities/bin32.h"
 
 namespace message
 {
