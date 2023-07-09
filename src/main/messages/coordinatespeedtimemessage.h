@@ -6,12 +6,9 @@
 #include "utilities/bin16.h"
 #include "utilities/bin32.h"
 
-namespace message
-{
     class CoordinateSpeedTimeMessage : public AbstractMessage
     {
     private:
-        //TODO:
         bin16 readness_word_;
         bin16 coordinates_systems_signs_;
         quint16 ellipsoid_number_;
@@ -26,7 +23,6 @@ namespace message
     public:
         CoordinateSpeedTimeMessage();
     };
-}
 
 
 #endif // COORDINATESPEEDTIMEMESSAGE_H

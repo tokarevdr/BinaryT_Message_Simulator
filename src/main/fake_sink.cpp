@@ -7,7 +7,7 @@ sink::FakeSink::FakeSink()
 
 }
 
-void sink::FakeSink::Send(std::unique_ptr<message::AbstractMessage> &message)
+void sink::FakeSink::Send(std::unique_ptr<AbstractMessage> &message)
 {
     qDebug() << message.get()->FormPackage();
 }

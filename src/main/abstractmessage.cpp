@@ -1,6 +1,6 @@
 #include "abstractmessage.h"
 
-message::AbstractMessage::AbstractMessage(
+AbstractMessage::AbstractMessage(
     quint8 message_identifier,
     quint8 informational_part_length
     )

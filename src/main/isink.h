@@ -10,7 +10,7 @@ class ISink
 public:
     virtual ~ISink() {};
 
-    virtual void Send(std::unique_ptr<message::AbstractMessage> &message) = 0;
+    virtual void Send(std::unique_ptr<AbstractMessage> &message) = 0;
 };
 
 } // namespace sink
