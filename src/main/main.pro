@@ -25,6 +25,7 @@ SOURCES += \
 HEADERS += \
     abstractmessage.h \
     fake_sink.h \
+    fields/imessagefields.h \
     message_field_table_widget.h \
     isink.h \
     messagemanager.h \
