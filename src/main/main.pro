@@ -15,6 +15,7 @@ SOURCES += \
     main.cpp \
     messagemanager.cpp \
     messages/coordinatespeedtimemessage.cpp \
+    messages/mockmessage.cpp \
     utilities/bin16.cpp \
     utilities/bin32.cpp \
     view/double_message_field_table_widget_delegate.cpp \
@@ -30,6 +31,7 @@ HEADERS += \
     isink.h \
     messagemanager.h \
     messages/coordinatespeedtimemessage.h \
+    messages/mockmessage.h \
     utilities/bin16.h \
     utilities/bin32.h \
     view/double_message_field_table_widget_delegate.h \
