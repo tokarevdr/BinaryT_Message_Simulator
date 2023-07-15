@@ -13,6 +13,7 @@ SOURCES += \
     fake_sink.cpp \
     message_field_table_widget.cpp \
     main.cpp \
+    message_fields_model.cpp \
     messagemanager.cpp \
     messages/coordinatespeedtimemessage.cpp \
     utilities/bin16.cpp \
@@ -27,6 +28,7 @@ HEADERS += \
     fake_sink.h \
     message_field_table_widget.h \
     isink.h \
+    message_fields_model.h \
     messagemanager.h \
     messages/coordinatespeedtimemessage.h \
     utilities/bin16.h \
