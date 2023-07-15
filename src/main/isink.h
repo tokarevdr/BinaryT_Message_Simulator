@@ -3,16 +3,14 @@
 
 #include "abstractmessage.h"
 
-namespace sink {
+
 
 class ISink
 {
 public:
     virtual ~ISink() {};
 
-    virtual void Send(std::unique_ptr<AbstractMessage> &message) = 0;
+    virtual void Send(const AbstractMessage message) const = 0;
 };
-
-} // namespace sink
 
 #endif // ISINK_H
