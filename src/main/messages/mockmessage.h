@@ -2,7 +2,7 @@
 #define MOCKMESSAGE_H
 
 #include <abstractmessage.h>
-#include "mockmessagefields.h"
+#include "fields/mockmessagefields.h"
 
 class MockMessage : public AbstractMessage
 {

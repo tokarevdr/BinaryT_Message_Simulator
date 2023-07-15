@@ -1,6 +1,6 @@
 #include "mockmessage.h"
 
-MockMessage::MockMessage(): AbstractMessage(10, 20)
+MockMessage::MockMessage(MockMessageFields): AbstractMessage(10, 20)
 {
 
 }
