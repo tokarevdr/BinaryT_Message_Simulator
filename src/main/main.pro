@@ -10,7 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     abstractmessage.cpp \
-    fake_sink.cpp \
+    sink\fake_sink.cpp \
     fields/mockmessagefields.cpp \
     message_field_table_widget.cpp \
     main.cpp \
@@ -18,6 +18,7 @@ SOURCES += \
     messagemanager.cpp \
     messages/coordinatespeedtimemessage.cpp \
     messages/mockmessage.cpp \
+    sink/filesink.cpp \
     utilities/bin16.cpp \
     utilities/bin32.cpp \
     view/double_message_field_table_widget_delegate.cpp \
@@ -27,7 +28,7 @@ SOURCES += \
 
 HEADERS += \
     abstractmessage.h \
-    fake_sink.h \
+    sink\fake_sink.h \
     fields/imessagefields.h \
     fields/mockmessagefields.h \
     message_field_table_widget.h \
@@ -36,6 +37,7 @@ HEADERS += \
     messagemanager.h \
     messages/coordinatespeedtimemessage.h \
     messages/mockmessage.h \
+    sink/filesink.h \
     utilities/bin16.h \
     utilities/bin32.h \
     view/double_message_field_table_widget_delegate.h \
