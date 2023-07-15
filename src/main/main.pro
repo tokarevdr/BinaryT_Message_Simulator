@@ -34,6 +34,7 @@ HEADERS += \
     isink.h \
     message_fields_model.h \
     messagemanager.h \
+    messages/messagetype.h \
     messages/coordinatespeedtimemessage.h \
     messages/mockmessage.h \
     utilities/bin16.h \
