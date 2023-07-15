@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     abstractmessage.cpp \
     fake_sink.cpp \
+    fields/mockmessagefields.cpp \
     message_field_table_widget.cpp \
     main.cpp \
     message_fields_model.cpp \
@@ -28,6 +29,7 @@ HEADERS += \
     abstractmessage.h \
     fake_sink.h \
     fields/imessagefields.h \
+    fields/mockmessagefields.h \
     message_field_table_widget.h \
     isink.h \
     message_fields_model.h \
