@@ -11,60 +11,39 @@ DoubleMessageFieldTableWidgetDelegate::DoubleMessageFieldTableWidgetDelegate(QOb
 QWidget* DoubleMessageFieldTableWidgetDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option,
                       const QModelIndex &index) const
 {
-    if (index.column() == 1)
-    {
-        QDoubleSpinBox *editor = new QDoubleSpinBox(parent);
-        editor->setFrame(false);
-        editor->setMinimum(-1.79e+308);
-        editor->setMaximum(1.79e+308);
-        editor->setDecimals(15);
+    Q_UNUSED(option)
+    Q_UNUSED(index)
 
-        return editor;
-    }
+    QDoubleSpinBox *editor = new QDoubleSpinBox(parent);
+    editor->setFrame(false);
+    editor->setMinimum(-1.79e+308);
+    editor->setMaximum(1.79e+308);
+    editor->setDecimals(15);
 
-    return QStyledItemDelegate::createEditor(parent, option, index);
+    return editor;
 }
 
 void DoubleMessageFieldTableWidgetDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const
 {
-    if (index.column() == 1)
-    {
-        double value = index.model()->data(index, Qt::EditRole).toDouble();
+    double value = index.model()->data(index, Qt::EditRole).toDouble();
 
-        QDoubleSpinBox *spinBox = static_cast<QDoubleSpinBox*>(editor);
-        spinBox->setValue(value);
-
-        return;
-    }
-
-    QStyledItemDelegate::setEditorData(editor, index);
+    QDoubleSpinBox *spinBox = static_cast<QDoubleSpinBox*>(editor);
+    spinBox->setValue(value);
 }
 
 void DoubleMessageFieldTableWidgetDelegate::setModelData(QWidget *editor, QAbstractItemModel *model,
                   const QModelIndex &index) const
 {
-    if (index.column() == 1)
-    {
-        QDoubleSpinBox *spinBox = static_cast<QDoubleSpinBox*>(editor);
-        double value = spinBox->value();
+    QDoubleSpinBox *spinBox = static_cast<QDoubleSpinBox*>(editor);
+    double value = spinBox->value();
 
-        model->setData(index, value, Qt::EditRole);
-
-        return;
-    }
-
-    QStyledItemDelegate::setModelData(editor, model, index);
+    model->setData(index, value, Qt::EditRole);
 }
 
 void DoubleMessageFieldTableWidgetDelegate::updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option,
                           const QModelIndex &index) const
 {
-    if (index.column() == 1)
-    {
-        editor->setGeometry(option.rect);
+    Q_UNUSED(index)
 
-        return;
-    }
-
-    QStyledItemDelegate::updateEditorGeometry(editor, option, index);
+    editor->setGeometry(option.rect);
 }

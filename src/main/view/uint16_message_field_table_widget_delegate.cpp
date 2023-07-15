@@ -11,60 +11,39 @@ UInt16MessageFieldTableWidgetDelegate::UInt16MessageFieldTableWidgetDelegate(QOb
 QWidget* UInt16MessageFieldTableWidgetDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option,
                       const QModelIndex &index) const
 {
-    if (index.column() == 1)
-    {
-        QSpinBox *editor = new QSpinBox(parent);
-        editor->setFrame(false);
-        editor->setMinimum(0);
-        editor->setMaximum(65535);
+    Q_UNUSED(option)
+    Q_UNUSED(index)
 
-        return editor;
-    }
+    QSpinBox *editor = new QSpinBox(parent);
+    editor->setFrame(false);
+    editor->setMinimum(0);
+    editor->setMaximum(65535);
 
-    return QStyledItemDelegate::createEditor(parent, option, index);
+    return editor;
 }
 
 void UInt16MessageFieldTableWidgetDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const
 {
-    if (index.column() == 1)
-    {
-        int value = index.model()->data(index, Qt::EditRole).toInt();
+    int value = index.model()->data(index, Qt::EditRole).toInt();
 
-        QSpinBox *spinBox = static_cast<QSpinBox*>(editor);
-        spinBox->setValue(value);
-
-        return;
-    }
-
-    QStyledItemDelegate::setEditorData(editor, index);
+    QSpinBox *spinBox = static_cast<QSpinBox*>(editor);
+    spinBox->setValue(value);
 }
 
 void UInt16MessageFieldTableWidgetDelegate::setModelData(QWidget *editor, QAbstractItemModel *model,
                   const QModelIndex &index) const
 {
-    if (index.column() == 1)
-    {
-        QSpinBox *spinBox = static_cast<QSpinBox*>(editor);
-        spinBox->interpretText();
-        int value = spinBox->value();
+    QSpinBox *spinBox = static_cast<QSpinBox*>(editor);
+    spinBox->interpretText();
+    int value = spinBox->value();
 
-        model->setData(index, value, Qt::EditRole);
-
-        return;
-    }
-
-    QStyledItemDelegate::setModelData(editor, model, index);
+    model->setData(index, value, Qt::EditRole);
 }
 
 void UInt16MessageFieldTableWidgetDelegate::updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option,
                           const QModelIndex &index) const
 {
-    if (index.column() == 1)
-    {
-        editor->setGeometry(option.rect);
+    Q_UNUSED(index)
 
-        return;
-    }
-
-    QStyledItemDelegate::updateEditorGeometry(editor, option, index);
+    editor->setGeometry(option.rect);
 }
