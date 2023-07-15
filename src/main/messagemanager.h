@@ -7,8 +7,6 @@
 
 #include "abstractmessage.h"
 
-namespace message {
-
 class MessageManager : public QObject
 {
 public:
@@ -26,7 +24,5 @@ public:
 private:
     std::unique_ptr<AbstractMessage> current_message;
 };
-
-} // namespace message
 
 #endif // MESSAGEMANAGER_H

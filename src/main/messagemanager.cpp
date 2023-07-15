@@ -1,6 +1,6 @@
 #include "messagemanager.h"
 
-message::MessageManager::MessageManager()
+MessageManager::MessageManager()
 {
 
 }

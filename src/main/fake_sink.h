@@ -10,7 +10,7 @@ class FakeSink : public ISink
 public:
     FakeSink();
 
-    void Send(std::unique_ptr<message::AbstractMessage> &message);
+    void Send(std::unique_ptr<AbstractMessage> &message);
 };
 
 } // namespace sink
