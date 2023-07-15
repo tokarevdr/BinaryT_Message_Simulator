@@ -43,7 +43,7 @@
      </layout>
     </item>
     <item>
-     <widget class="MessageFieldTableWidget" name="tableWidget_messageFields" native="true"/>
+     <widget class="QTableView" name="tableView_messageFields"/>
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -95,14 +95,6 @@
    </property>
   </action>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>MessageFieldTableWidget</class>
-   <extends>QWidget</extends>
-   <header>message_field_table_widget.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

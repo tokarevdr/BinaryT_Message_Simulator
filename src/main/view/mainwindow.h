@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include "message_fields_model.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -15,7 +17,10 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void setTableViewFields(QList<IMessageFields::FieldType> fieldsType);
+
 private:
     Ui::MainWindow *ui;
+    MessageFieldsModel *_messageFieldsModel;
 };
 #endif // MAINWINDOW_H
