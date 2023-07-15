@@ -13,6 +13,7 @@ SOURCES += \
     fake_sink.cpp \
     message_field_table_widget.cpp \
     main.cpp \
+    message_fields_model.cpp \
     messagemanager.cpp \
     messages/coordinatespeedtimemessage.cpp \
     messages/mockmessage.cpp \
@@ -29,6 +30,7 @@ HEADERS += \
     fields/imessagefields.h \
     message_field_table_widget.h \
     isink.h \
+    message_fields_model.h \
     messagemanager.h \
     messages/coordinatespeedtimemessage.h \
     messages/mockmessage.h \
