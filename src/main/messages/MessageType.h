@@ -3,7 +3,8 @@
 
 enum class MessageType
 {
-    CoordinateSpeedTimeMessage, MockMessage
+    CoordinateSpeedTimeMessage,
+    MockMessage
 };
 
 #endif // MESSAGETYPE_H

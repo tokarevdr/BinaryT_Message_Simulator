@@ -2,15 +2,16 @@
 #define MESSAGEFIELDSFACTORY_H
 
 #include "imessagefields.h"
+#include "../messages/messagetype.h"
 
 class MessageFieldsFactory
 {
 private:
-    IMessageFields::FieldType type;
+    MessageType type;
 public:
-    MessageFieldsFactory(IMessageFields::FieldType type);
+    MessageFieldsFactory(MessageType type);
 
-    IMessageFields getFields() const;
+    std::unique_ptr<IMessageFields> getFields() const;
 };
 
 #endif // MESSAGEFIELDSFACTORY_H
