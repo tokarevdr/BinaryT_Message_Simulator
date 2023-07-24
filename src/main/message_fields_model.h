@@ -1,7 +1,11 @@
 #ifndef MESSAGEFIELDSMODEL_H
 #define MESSAGEFIELDSMODEL_H
 
+#include <memory>
+
 #include <QAbstractTableModel>
+
+#include "fields/mockmessagefields.h"
 
 class MessageFieldsModel : public QAbstractTableModel
 {
@@ -17,10 +21,14 @@ public:
     QVariant headerData(int section, Qt::Orientation orientation,
                                 int role = Qt::DisplayRole) const override;
 
-    void setCurrentMessageFields(int type); // TODO enum
+    Qt::ItemFlags flags(const QModelIndex &index) const override;
+
+    void setCurrentMessageFields(IMessageFields::FieldType fieldType);
+
+    QList<IMessageFields::FieldType> getMessageFieldsType() const;
 
 private:
-
+    std::unique_ptr<IMessageFields> _messageFields;
 };
 
 #endif // MESSAGEFIELDSMODEL_H
