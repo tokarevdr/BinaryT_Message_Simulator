@@ -17,6 +17,11 @@ void bin32::setValue(quint32 value)
     value_ |= value;
 }
 
+quint32 bin32::value() const
+{
+    return value_;
+}
+
 bool bin32::bitAt(quint8 bit) const
 {
     Q_ASSERT(bit <= 31);

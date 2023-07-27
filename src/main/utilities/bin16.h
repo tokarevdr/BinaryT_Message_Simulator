@@ -10,9 +10,10 @@ public:
     bin16(quint16 value = 0);
 
     void setBit(quint8 bit, bool value);
-    bool bit(quint8 bit) const;
+    bool bitAt(quint8 bit) const;
     quint16 bits(quint8 bit_begin, quint8 bit_end) const;
     void setValue(quint16 value);
+    quint16 value() const;
 
 private:
     quint16 value_;

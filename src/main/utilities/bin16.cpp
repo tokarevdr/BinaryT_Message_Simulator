@@ -17,7 +17,12 @@ void bin16::setValue(quint16 value)
     value_ |= value;
 }
 
-bool bin16::bit(quint8 bit) const
+quint16 bin16::value() const
+{
+    return value_;
+}
+
+bool bin16::bitAt(quint8 bit) const
 {
     Q_ASSERT(bit <= 15);
     return value_ & (1 << bit);
@@ -30,7 +35,7 @@ quint16 bin16::bits(quint8 bit_begin, quint8 bit_end) const
     quint8 length = bit_end - bit_begin;
     quint16 mask = 1;
 
-    for(int i = 1; i<= length; i++)
+    for (int i = 1; i<= length; i++)
     {
         mask <<= 1;
         mask++;

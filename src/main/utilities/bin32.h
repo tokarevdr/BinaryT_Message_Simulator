@@ -12,6 +12,7 @@ public:
     bool bitAt(quint8 bit) const;
     quint32 bits(quint8 bit_begin, quint8 bit_end) const;
     void setValue(quint32 value);
+    quint32 value() const;
 
 private:
     quint32 value_;
