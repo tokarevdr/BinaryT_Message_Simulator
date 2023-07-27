@@ -72,15 +72,19 @@ bool CoordinateSpeedTimeMessage::setField(quint8 row, QVariant value)
 
     switch (row) {
     case 0:
+        readiness_word_ = value.toUInt();
         return true;
     case 1:
+        coordinates_systems_signs_ = value.toUInt();
         return true;
     case 2:
         ellipsoid_number_ = value.toInt();
         return true;
     case 3:
+        date_ = value.toUInt();
         return true;
     case 4:
+        time_ = value.toUInt();
         return true;
     case 5:
          latitude_ = value.toDouble();
@@ -111,11 +115,11 @@ QVariant CoordinateSpeedTimeMessage::field(quint8 row) const
 
     switch (row)
     {
-    case 0: return QVariant();
-    case 1: return QVariant();
+    case 0: return readiness_word_.value();
+    case 1: return coordinates_systems_signs_.value();
     case 2: return ellipsoid_number_;
-    case 3: return QVariant();
-    case 4: return QVariant();
+    case 3: return date_.value();
+    case 4: return time_.value();
     case 5: return latitude_;
     case 6: return longitude_;
     case 7: return altitude_;

@@ -23,7 +23,7 @@ public:
     virtual QVariant field(quint8 row) const override;
 
 private:
-    bin16 readness_word_;
+    bin16 readiness_word_;
     bin16 coordinates_systems_signs_;
     quint16 ellipsoid_number_ = 0;
     bin32 date_;
