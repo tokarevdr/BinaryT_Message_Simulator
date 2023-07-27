@@ -1,19 +1,21 @@
-#include <QCoreApplication>
-#include <QDebug>
+#ifndef BIN16_H
+#define BIN16_H
 
+#include <QtGlobal>
 
 class bin16
 {
 
 public:
-
     bin16(quint16 value = 0);
 
-    void SetBit(quint8 bit, bool value);
-    bool GetBit(quint8 bit) const;
-    quint16 GetBits(quint8 bit_begin, quint8 bit_end) const;
-    void SetValue(quint16 buffer);
+    void setBit(quint8 bit, bool value);
+    bool bit(quint8 bit) const;
+    quint16 bits(quint8 bit_begin, quint8 bit_end) const;
+    void setValue(quint16 value);
 
 private:
     quint16 value_;
 };
+
+#endif // BIN16_H
