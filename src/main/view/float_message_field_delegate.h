@@ -3,10 +3,10 @@
 
 #include <QStyledItemDelegate>
 
-class FloatMessageFieldTableWidgetDelegate : public QStyledItemDelegate
+class FloatMessageFieldDelegate : public QStyledItemDelegate
 {
 public:
-    explicit FloatMessageFieldTableWidgetDelegate(QObject *parent = nullptr);
+    explicit FloatMessageFieldDelegate(QObject *parent = nullptr);
 
     QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option,
                           const QModelIndex &index) const override;

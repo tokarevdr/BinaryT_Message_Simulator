@@ -1,14 +1,14 @@
-#include "uint16_message_field_table_widget_delegate.h"
+#include "uint16_message_field_delegate.h"
 
 #include <QSpinBox>
 
-UInt16MessageFieldTableWidgetDelegate::UInt16MessageFieldTableWidgetDelegate(QObject *parent)
+UInt16MessageFieldDelegate::UInt16MessageFieldDelegate(QObject *parent)
     : QStyledItemDelegate{parent}
 {
 
 }
 
-QWidget* UInt16MessageFieldTableWidgetDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option,
+QWidget* UInt16MessageFieldDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option,
                       const QModelIndex &index) const
 {
     Q_UNUSED(option)
@@ -22,7 +22,7 @@ QWidget* UInt16MessageFieldTableWidgetDelegate::createEditor(QWidget *parent, co
     return editor;
 }
 
-void UInt16MessageFieldTableWidgetDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const
+void UInt16MessageFieldDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const
 {
     int value = index.model()->data(index, Qt::EditRole).toInt();
 
@@ -30,7 +30,7 @@ void UInt16MessageFieldTableWidgetDelegate::setEditorData(QWidget *editor, const
     spinBox->setValue(value);
 }
 
-void UInt16MessageFieldTableWidgetDelegate::setModelData(QWidget *editor, QAbstractItemModel *model,
+void UInt16MessageFieldDelegate::setModelData(QWidget *editor, QAbstractItemModel *model,
                   const QModelIndex &index) const
 {
     QSpinBox *spinBox = static_cast<QSpinBox*>(editor);
@@ -40,7 +40,7 @@ void UInt16MessageFieldTableWidgetDelegate::setModelData(QWidget *editor, QAbstr
     model->setData(index, value, Qt::EditRole);
 }
 
-void UInt16MessageFieldTableWidgetDelegate::updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option,
+void UInt16MessageFieldDelegate::updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option,
                           const QModelIndex &index) const
 {
     Q_UNUSED(index)
