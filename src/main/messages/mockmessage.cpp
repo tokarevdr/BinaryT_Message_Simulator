@@ -64,8 +64,10 @@ bool MockMessage::setField(quint8 row, QVariant value)
         uint32 = value.toUInt();
         return true;
     case 2:
+        bin_16 = value.toUInt();
         return true;
     case 3:
+        bin_32 = value.toUInt();
         return true;
     case 4:
         floatVar = value.toFloat();
@@ -86,8 +88,8 @@ QVariant MockMessage::field(quint8 row) const
     {
     case 0: return uint16;
     case 1: return uint32;
-    case 2: return QVariant();
-    case 3: return QVariant();
+    case 2: return bin_16.value();
+    case 3: return bin_32.value();
     case 4: return floatVar;
     case 5: return doubleVar;
     default: return QVariant();
