@@ -1,9 +1,7 @@
 #ifndef ABSTRACTMESSAGE_H
 #define ABSTRACTMESSAGE_H
 
-#include<QObject>
-#include<QMap>
-#include<QString>
+#include <QString>
 
 class AbstractMessage
 {
@@ -27,9 +25,9 @@ public:
     //virtual void SetFields(QList<QVariant>) = 0;
 
 private:
-    static const quint16 kHeaderIdentifier = 0xF157;
-    quint8 message_identifier_;
-    quint8 informational_part_length_;
+    static constexpr quint16 kHeaderIdentifier = 0xF157;
+    const quint8 message_identifier_;
+    const quint8 informational_part_length_;
 };
 
 #endif // ABSTRACTMESSAGE_H
