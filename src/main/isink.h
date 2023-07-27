@@ -1,7 +1,7 @@
 #ifndef ISINK_H
 #define ISINK_H
 
-#include "abstractmessage.h"
+#include "messages/abstractmessage.h"
 
 namespace sink {
 
