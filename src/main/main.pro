@@ -18,6 +18,8 @@ SOURCES += \
     messages/mockmessage.cpp \
     utilities/bin16.cpp \
     utilities/bin32.cpp \
+    view/bin16_message_field_delegate.cpp \
+    view/bin32_message_field_delegate.cpp \
     view/double_message_field_delegate.cpp \
     view/float_message_field_delegate.cpp \
     view/mainwindow.cpp \
@@ -34,6 +36,8 @@ HEADERS += \
     messages/mockmessage.h \
     utilities/bin16.h \
     utilities/bin32.h \
+    view/bin16_message_field_delegate.h \
+    view/bin32_message_field_delegate.h \
     view/double_message_field_delegate.h \
     view/float_message_field_delegate.h \
     view/mainwindow.h \

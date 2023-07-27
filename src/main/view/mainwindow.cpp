@@ -8,6 +8,8 @@
 #include "float_message_field_delegate.h"
 #include "uint16_message_field_delegate.h"
 #include "uint32_message_field_delegate.h"
+#include "bin16_message_field_delegate.h"
+#include "bin32_message_field_delegate.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -64,6 +66,20 @@ void MainWindow::setTableViewFields(QList<AbstractMessage::FieldType> fieldsType
         case AbstractMessage::FieldType::UInt32:
         {
             UInt32MessageFieldDelegate *delegate = new UInt32MessageFieldDelegate();
+            ui->tableView_messageFields->setItemDelegateForRow(i, delegate);
+            break;
+        }
+
+        case AbstractMessage::FieldType::Bin16:
+        {
+            Bin16MessageFieldDelegate *delegate = new Bin16MessageFieldDelegate();
+            ui->tableView_messageFields->setItemDelegateForRow(i, delegate);
+            break;
+        }
+
+        case AbstractMessage::FieldType::Bin32:
+        {
+            Bin32MessageFieldDelegate *delegate = new Bin32MessageFieldDelegate();
             ui->tableView_messageFields->setItemDelegateForRow(i, delegate);
             break;
         }
