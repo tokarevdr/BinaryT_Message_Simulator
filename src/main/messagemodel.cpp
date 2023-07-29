@@ -109,20 +109,6 @@ Qt::ItemFlags MessageModel::flags(const QModelIndex &index) const
     return Qt::ItemIsEnabled;
 }
 
-bool MessageModel::insertRows(int row, int count, const QModelIndex &parent)
-{
-    beginInsertRows(parent, row , row + count);
-    endInsertRows();
-    return true;
-}
-
-bool MessageModel::removeRows(int row, int count, const QModelIndex &parent)
-{
-    beginRemoveRows(parent, row , row + count);
-    endRemoveRows();
-    return true;
-}
-
 void MessageModel::setCurrentMessage(const QString &messageName)
 {
     // Создаем сообщение, если его еще не было
