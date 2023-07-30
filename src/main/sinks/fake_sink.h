@@ -3,16 +3,14 @@
 
 #include "isink.h"
 
-namespace sink {
-
 class FakeSink : public ISink
 {
 public:
     FakeSink();
 
-    void Send(std::unique_ptr<AbstractMessage> &message);
+    void send(const QByteArray &payload) override;
+    bool open() override;
+    void close() override;
 };
-
-} // namespace sink
 
 #endif // FAKESINK_H
