@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -10,7 +10,6 @@ CONFIG += c++17
 
 SOURCES += \
     abstractmessage.cpp \
-    fake_sink.cpp \
     fields/mockmessagefields.cpp \
     message_field_table_widget.cpp \
     main.cpp \
@@ -18,33 +17,39 @@ SOURCES += \
     messagemanager.cpp \
     messages/coordinatespeedtimemessage.cpp \
     messages/mockmessage.cpp \
+    sinks/fake_sink.cpp \
+    sinks/filesink.cpp \
     utilities/bin16.cpp \
     utilities/bin32.cpp \
     view/double_message_field_table_widget_delegate.cpp \
     view/float_message_field_table_widget_delegate.cpp \
     view/mainwindow.cpp \
+    view/messagesinkdialog.cpp \
     view/uint16_message_field_table_widget_delegate.cpp
 
 HEADERS += \
     abstractmessage.h \
-    fake_sink.h \
     fields/imessagefields.h \
     fields/mockmessagefields.h \
     message_field_table_widget.h \
-    isink.h \
     message_fields_model.h \
     messagemanager.h \
     messages/coordinatespeedtimemessage.h \
     messages/mockmessage.h \
+    sinks/fake_sink.h \
+    sinks/filesink.h \
+    sinks/isink.h \
     utilities/bin16.h \
     utilities/bin32.h \
     view/double_message_field_table_widget_delegate.h \
     view/float_message_field_table_widget_delegate.h \
     view/mainwindow.h \
+    view/messagesinkdialog.h \
     view/uint16_message_field_table_widget_delegate.h
 
 FORMS += \
-    view/mainwindow.ui
+    view/mainwindow.ui \
+    view/messagesinkdialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
