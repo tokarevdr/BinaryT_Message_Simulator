@@ -1,14 +1,14 @@
-#include "uint16_message_field_table_widget_delegate.h"
+#include "uint32_message_field_delegate.h"
 
 #include <QSpinBox>
 
-UInt16MessageFieldTableWidgetDelegate::UInt16MessageFieldTableWidgetDelegate(QObject *parent)
+UInt32MessageFieldDelegate::UInt32MessageFieldDelegate(QObject *parent)
     : QStyledItemDelegate{parent}
 {
 
 }
 
-QWidget* UInt16MessageFieldTableWidgetDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option,
+QWidget* UInt32MessageFieldDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option,
                       const QModelIndex &index) const
 {
     Q_UNUSED(option)
@@ -17,12 +17,12 @@ QWidget* UInt16MessageFieldTableWidgetDelegate::createEditor(QWidget *parent, co
     QSpinBox *editor = new QSpinBox(parent);
     editor->setFrame(false);
     editor->setMinimum(0);
-    editor->setMaximum(65535);
+    editor->setMaximum(2147483647);
 
     return editor;
 }
 
-void UInt16MessageFieldTableWidgetDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const
+void UInt32MessageFieldDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const
 {
     int value = index.model()->data(index, Qt::EditRole).toInt();
 
@@ -30,7 +30,7 @@ void UInt16MessageFieldTableWidgetDelegate::setEditorData(QWidget *editor, const
     spinBox->setValue(value);
 }
 
-void UInt16MessageFieldTableWidgetDelegate::setModelData(QWidget *editor, QAbstractItemModel *model,
+void UInt32MessageFieldDelegate::setModelData(QWidget *editor, QAbstractItemModel *model,
                   const QModelIndex &index) const
 {
     QSpinBox *spinBox = static_cast<QSpinBox*>(editor);
@@ -40,7 +40,7 @@ void UInt16MessageFieldTableWidgetDelegate::setModelData(QWidget *editor, QAbstr
     model->setData(index, value, Qt::EditRole);
 }
 
-void UInt16MessageFieldTableWidgetDelegate::updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option,
+void UInt32MessageFieldDelegate::updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option,
                           const QModelIndex &index) const
 {
     Q_UNUSED(index)

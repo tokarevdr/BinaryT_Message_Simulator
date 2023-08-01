@@ -1,12 +1,12 @@
-#ifndef FLOATMESSAGEFIELDTABLEWIDGETDELEGATE_H
-#define FLOATMESSAGEFIELDTABLEWIDGETDELEGATE_H
+#ifndef UINT32MESSAGEFIELDDELEGATE_H
+#define UINT32MESSAGEFIELDDELEGATE_H
 
 #include <QStyledItemDelegate>
 
-class FloatMessageFieldTableWidgetDelegate : public QStyledItemDelegate
+class UInt32MessageFieldDelegate : public QStyledItemDelegate
 {
 public:
-    explicit FloatMessageFieldTableWidgetDelegate(QObject *parent = nullptr);
+    explicit UInt32MessageFieldDelegate(QObject *parent = nullptr);
 
     QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option,
                           const QModelIndex &index) const override;
@@ -19,4 +19,4 @@ public:
                               const QModelIndex &index) const override;
 };
 
-#endif // FLOATMESSAGEFIELDTABLEWIDGETDELEGATE_H
+#endif // UINT32MESSAGEFIELDDELEGATE_H

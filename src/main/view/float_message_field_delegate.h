@@ -1,12 +1,12 @@
-#ifndef DOUBLEMESSAGEFIELDTABLEWIDGETDELEGATE_H
-#define DOUBLEMESSAGEFIELDTABLEWIDGETDELEGATE_H
+#ifndef FLOATMESSAGEFIELDTABLEWIDGETDELEGATE_H
+#define FLOATMESSAGEFIELDTABLEWIDGETDELEGATE_H
 
 #include <QStyledItemDelegate>
 
-class DoubleMessageFieldTableWidgetDelegate : public QStyledItemDelegate
+class FloatMessageFieldDelegate : public QStyledItemDelegate
 {
 public:
-    explicit DoubleMessageFieldTableWidgetDelegate(QObject *parent = nullptr);
+    explicit FloatMessageFieldDelegate(QObject *parent = nullptr);
 
     QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option,
                           const QModelIndex &index) const override;
@@ -19,4 +19,4 @@ public:
                               const QModelIndex &index) const override;
 };
 
-#endif // DOUBLEMESSAGEFIELDTABLEWIDGETDELEGATE_H
+#endif // FLOATMESSAGEFIELDTABLEWIDGETDELEGATE_H

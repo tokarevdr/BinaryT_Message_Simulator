@@ -1,16 +1,14 @@
-#ifndef MESSAGEFIELDSMODEL_H
-#define MESSAGEFIELDSMODEL_H
-
-#include <memory>
+#ifndef MESSAGEMODEL_H
+#define MESSAGEMODEL_H
 
 #include <QAbstractTableModel>
 
-#include "fields/mockmessagefields.h"
+#include "messages/abstractmessage.h"
 
-class MessageFieldsModel : public QAbstractTableModel
+class MessageModel : public QAbstractTableModel
 {
 public:
-    explicit MessageFieldsModel(QObject *parent = nullptr);
+    explicit MessageModel(QObject *parent = nullptr);
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     int columnCount(const QModelIndex &parent = QModelIndex()) const override;
@@ -23,12 +21,13 @@ public:
 
     Qt::ItemFlags flags(const QModelIndex &index) const override;
 
-    void setCurrentMessageFields(IMessageFields::FieldType fieldType);
-
-    QList<IMessageFields::FieldType> getMessageFieldsType() const;
+    void setCurrentMessage(const QString &messageName);
+    QList<AbstractMessage::FieldType> fieldTypes() const;
+    QStringList messageNames() const;
 
 private:
-    std::unique_ptr<IMessageFields> _messageFields;
+    QMap<QString, AbstractMessage*> messages_;
+    QString currentMessageName_ = "";
 };
 
-#endif // MESSAGEFIELDSMODEL_H
+#endif // MESSAGEMODEL_H

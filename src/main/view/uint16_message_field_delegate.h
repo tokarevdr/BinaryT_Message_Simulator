@@ -3,10 +3,10 @@
 
 #include <QStyledItemDelegate>
 
-class UInt16MessageFieldTableWidgetDelegate : public QStyledItemDelegate
+class UInt16MessageFieldDelegate : public QStyledItemDelegate
 {
 public:
-    explicit UInt16MessageFieldTableWidgetDelegate(QObject *parent = nullptr);
+    explicit UInt16MessageFieldDelegate(QObject *parent = nullptr);
 
     QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option,
                           const QModelIndex &index) const override;

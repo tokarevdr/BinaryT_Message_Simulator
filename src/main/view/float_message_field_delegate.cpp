@@ -1,14 +1,14 @@
-#include "float_message_field_table_widget_delegate.h"
+#include "float_message_field_delegate.h"
 
 #include <QDoubleSpinBox>
 
-FloatMessageFieldTableWidgetDelegate::FloatMessageFieldTableWidgetDelegate(QObject *parent)
+FloatMessageFieldDelegate::FloatMessageFieldDelegate(QObject *parent)
     : QStyledItemDelegate{parent}
 {
 
 }
 
-QWidget* FloatMessageFieldTableWidgetDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option,
+QWidget* FloatMessageFieldDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option,
                       const QModelIndex &index) const
 {
     Q_UNUSED(option)
@@ -23,7 +23,7 @@ QWidget* FloatMessageFieldTableWidgetDelegate::createEditor(QWidget *parent, con
     return editor;
 }
 
-void FloatMessageFieldTableWidgetDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const
+void FloatMessageFieldDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const
 {
     float value = index.model()->data(index, Qt::EditRole).toFloat();
 
@@ -31,7 +31,7 @@ void FloatMessageFieldTableWidgetDelegate::setEditorData(QWidget *editor, const 
     spinBox->setValue(value);
 }
 
-void FloatMessageFieldTableWidgetDelegate::setModelData(QWidget *editor, QAbstractItemModel *model,
+void FloatMessageFieldDelegate::setModelData(QWidget *editor, QAbstractItemModel *model,
                   const QModelIndex &index) const
 {
     QDoubleSpinBox *spinBox = static_cast<QDoubleSpinBox*>(editor);
@@ -40,7 +40,7 @@ void FloatMessageFieldTableWidgetDelegate::setModelData(QWidget *editor, QAbstra
     model->setData(index, value, Qt::EditRole);
 }
 
-void FloatMessageFieldTableWidgetDelegate::updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option,
+void FloatMessageFieldDelegate::updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option,
                           const QModelIndex &index) const
 {
     Q_UNUSED(index)

@@ -1,14 +1,14 @@
-#include "double_message_field_table_widget_delegate.h"
+#include "double_message_field_delegate.h"
 
 #include <QDoubleSpinBox>
 
-DoubleMessageFieldTableWidgetDelegate::DoubleMessageFieldTableWidgetDelegate(QObject *parent)
+DoubleMessageFieldDelegate::DoubleMessageFieldDelegate(QObject *parent)
     : QStyledItemDelegate{parent}
 {
 
 }
 
-QWidget* DoubleMessageFieldTableWidgetDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option,
+QWidget* DoubleMessageFieldDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option,
                       const QModelIndex &index) const
 {
     Q_UNUSED(option)
@@ -23,7 +23,7 @@ QWidget* DoubleMessageFieldTableWidgetDelegate::createEditor(QWidget *parent, co
     return editor;
 }
 
-void DoubleMessageFieldTableWidgetDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const
+void DoubleMessageFieldDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const
 {
     double value = index.model()->data(index, Qt::EditRole).toDouble();
 
@@ -31,7 +31,7 @@ void DoubleMessageFieldTableWidgetDelegate::setEditorData(QWidget *editor, const
     spinBox->setValue(value);
 }
 
-void DoubleMessageFieldTableWidgetDelegate::setModelData(QWidget *editor, QAbstractItemModel *model,
+void DoubleMessageFieldDelegate::setModelData(QWidget *editor, QAbstractItemModel *model,
                   const QModelIndex &index) const
 {
     QDoubleSpinBox *spinBox = static_cast<QDoubleSpinBox*>(editor);
@@ -40,7 +40,7 @@ void DoubleMessageFieldTableWidgetDelegate::setModelData(QWidget *editor, QAbstr
     model->setData(index, value, Qt::EditRole);
 }
 
-void DoubleMessageFieldTableWidgetDelegate::updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option,
+void DoubleMessageFieldDelegate::updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option,
                           const QModelIndex &index) const
 {
     Q_UNUSED(index)

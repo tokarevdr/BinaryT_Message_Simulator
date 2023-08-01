@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 
-#include "message_fields_model.h"
+#include "messagemodel.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,10 +17,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    void setTableViewFields(QList<IMessageFields::FieldType> fieldsType);
+    void setTableViewFields(QList<AbstractMessage::FieldType> fieldTypes);
+
+private slots:
+    void on_comboBox_messageNames_currentTextChanged(const QString &arg1);
 
 private:
     Ui::MainWindow *ui;
-    MessageFieldsModel *_messageFieldsModel;
+    MessageModel *messageModel_;
 };
 #endif // MAINWINDOW_H
