@@ -13,7 +13,9 @@ quint16 CoordinateSpeedTimeMessage::checkSum() const
 
 QByteArray CoordinateSpeedTimeMessage::formPackage() const
 {
-    return QByteArray();
+    QByteArray payload("КВ-данные");
+
+    return payload;
 }
 
 quint8 CoordinateSpeedTimeMessage::rowCount() const
