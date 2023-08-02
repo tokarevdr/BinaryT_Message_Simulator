@@ -10,6 +10,7 @@ class FileSink : public ISink
 {
 public:
     FileSink(const QString &namepath);
+    ~FileSink();
 
     void send(const QByteArray &payload) override;
     bool open() override;

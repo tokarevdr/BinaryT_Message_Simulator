@@ -22,6 +22,10 @@ public:
 private slots:
     void on_comboBox_messageNames_currentTextChanged(const QString &arg1);
 
+    void on_sending_triggered();
+
+    void on_pushButton_sendMessage_clicked();
+
 private:
     Ui::MainWindow *ui;
     MessageModel *messageModel_;

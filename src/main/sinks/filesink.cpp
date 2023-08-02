@@ -6,6 +6,11 @@ FileSink::FileSink(const QString &namepath)
     out_.setDevice(&file_);
 }
 
+FileSink::~FileSink()
+{
+    file_.close();
+}
+
 void FileSink::send(const QByteArray &payload)
 {
     if (!open_)

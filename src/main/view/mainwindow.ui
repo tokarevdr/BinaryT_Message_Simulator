@@ -88,14 +88,17 @@
     <property name="title">
      <string>Настройки</string>
     </property>
-    <addaction name="action"/>
+    <addaction name="sending"/>
    </widget>
    <addaction name="menu"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="action">
+  <action name="sending">
    <property name="text">
     <string>Отправка</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::PreferencesRole</enum>
    </property>
   </action>
  </widget>

@@ -24,7 +24,7 @@ public:
     virtual QVariant field(quint8 row) const = 0;
     //virtual void SetFields(QList<QVariant>) = 0;
 
-private:
+protected:
     static constexpr quint16 kHeaderIdentifier = 0xF157;
     const quint8 message_identifier_;
     const quint8 informational_part_length_;

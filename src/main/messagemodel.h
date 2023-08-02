@@ -4,11 +4,13 @@
 #include <QAbstractTableModel>
 
 #include "messages/abstractmessage.h"
+#include "sinks/isink.h"
 
 class MessageModel : public QAbstractTableModel
 {
 public:
     explicit MessageModel(QObject *parent = nullptr);
+    ~MessageModel();
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     int columnCount(const QModelIndex &parent = QModelIndex()) const override;
@@ -24,10 +26,13 @@ public:
     void setCurrentMessage(const QString &messageName);
     QList<AbstractMessage::FieldType> fieldTypes() const;
     QStringList messageNames() const;
+    void setSink(ISink* sink);
+    void send();
 
 private:
     QMap<QString, AbstractMessage*> messages_;
     QString currentMessageName_ = "";
+    ISink *sink_ = nullptr;
 };
 
 #endif // MESSAGEMODEL_H

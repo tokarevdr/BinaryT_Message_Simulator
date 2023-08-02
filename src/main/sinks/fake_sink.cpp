@@ -9,7 +9,7 @@ FakeSink::FakeSink()
 
 void FakeSink::send(const QByteArray &payload)
 {
-    qDebug() << payload;
+    qDebug() << QString(payload);
 }
 
 bool FakeSink::open()
