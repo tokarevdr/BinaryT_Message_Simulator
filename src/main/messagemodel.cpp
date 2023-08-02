@@ -9,6 +9,11 @@ MessageModel::MessageModel(QObject *parent)
 
 }
 
+MessageModel::~MessageModel()
+{
+    delete sink_;
+}
+
 int MessageModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent)
@@ -159,4 +164,22 @@ QStringList MessageModel::messageNames() const
     names << "Исходные КВ-данные";
 
     return names;
+}
+
+void MessageModel::setSink(ISink* sink)
+{
+    if (sink_)
+        sink_->close();
+
+    sink_ = sink;
+
+    sink_->open();
+}
+
+void MessageModel::send()
+{
+    if (!sink_)
+        return;
+
+    sink_->send(messages_[currentMessageName_]->formPackage());
 }
