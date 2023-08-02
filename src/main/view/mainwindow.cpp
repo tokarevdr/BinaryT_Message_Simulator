@@ -1,15 +1,14 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include <QModelIndex>
-#include <QLineEdit>
-
 #include "double_message_field_delegate.h"
 #include "float_message_field_delegate.h"
 #include "uint16_message_field_delegate.h"
 #include "uint32_message_field_delegate.h"
 #include "bin16_message_field_delegate.h"
 #include "bin32_message_field_delegate.h"
+
+#include "messagesinkdialog.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -32,6 +31,8 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+
+    delete messageModel_;
 }
 
 void MainWindow::setTableViewFields(QList<AbstractMessage::FieldType> fieldsType)
@@ -102,5 +103,20 @@ void MainWindow::on_comboBox_messageNames_currentTextChanged(const QString &arg1
     messageModel_->setCurrentMessage(arg1);
 
     setTableViewFields(messageModel_->fieldTypes());
+}
+
+void MainWindow::on_sending_triggered()
+{
+    MessageSinkDialog dialog;
+
+    if (!dialog.exec())
+        return;
+
+    messageModel_->setSink(dialog.sink());
+}
+
+void MainWindow::on_pushButton_sendMessage_clicked()
+{
+    messageModel_->send();
 }
 
