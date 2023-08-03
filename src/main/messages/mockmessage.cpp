@@ -1,7 +1,5 @@
 #include "mockmessage.h"
 
-#include <QDebug>
-
 MockMessage::MockMessage(): AbstractMessage(205, 6)
 {
 
