@@ -6,18 +6,6 @@ CoordinateSpeedTimeMessage::CoordinateSpeedTimeMessage() :
 
 }
 
-quint16 CoordinateSpeedTimeMessage::checkSum() const
-{
-    return 0;
-}
-
-QByteArray CoordinateSpeedTimeMessage::formPackage() const
-{
-    QByteArray payload("КВ-данные");
-
-    return payload;
-}
-
 quint8 CoordinateSpeedTimeMessage::rowCount() const
 {
     return 11;
