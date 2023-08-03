@@ -2,6 +2,7 @@
 #define ABSTRACTMESSAGE_H
 
 #include <QString>
+#include <QVariant>
 
 class AbstractMessage
 {
@@ -13,8 +14,8 @@ public:
     AbstractMessage(quint8 message_identifier,
                     quint8 informational_part_length);
 
-    virtual quint16 checkSum() const = 0;
-    virtual QByteArray formPackage() const = 0;
+    quint16 checkSum() const;
+    QByteArray formPackage() const;
     //virtual QMap<QString, int> getFields() const = 0;
 
     virtual quint8 rowCount() const = 0;

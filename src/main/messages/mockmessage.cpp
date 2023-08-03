@@ -1,29 +1,10 @@
 #include "mockmessage.h"
 
+#include <QDebug>
+
 MockMessage::MockMessage(): AbstractMessage(205, 6)
 {
 
-}
-
-quint16 MockMessage::checkSum() const
-{
-    return 0;
-}
-
-QByteArray MockMessage::formPackage() const
-{
-    QByteArray payload("МОК сообщение");
-
-//    payload.resize(informational_part_length_);
-
-//    payload[0] = uint16;
-//    payload[1] = uint32;
-//    payload[2] = bin_16.value();
-//    payload[3] = bin_32.value();
-//    payload[4] = floatVar;
-//    payload[5] = doubleVar;
-
-    return payload;
 }
 
 quint8 MockMessage::rowCount() const

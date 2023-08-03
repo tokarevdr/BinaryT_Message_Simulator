@@ -13,9 +13,6 @@ class CoordinateSpeedTimeMessage : public AbstractMessage
 public:
     CoordinateSpeedTimeMessage();
 
-    virtual quint16 checkSum() const override;
-    virtual QByteArray formPackage() const override;
-
     virtual quint8 rowCount() const override;
     virtual QString fieldName(quint8 row) const override;
     virtual FieldType fieldType(quint8 row) const override;
